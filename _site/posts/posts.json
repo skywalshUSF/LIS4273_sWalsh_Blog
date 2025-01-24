@@ -1,0 +1,19 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "My LIS4273 Blog",
+    "description": "This is for LIS4273 advanced stats.",
+    "author": [
+      {
+        "name": "Skylar Walsh",
+        "url": {}
+      }
+    ],
+    "date": "2025-01-24",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2025-01-24T14:56:11-05:00",
+    "input_file": {}
+  }
+]
