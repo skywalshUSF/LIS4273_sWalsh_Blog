@@ -1,0 +1,39 @@
+---
+title: "Module 2 Assignment"
+description: |
+  The myMean function calculates the mean.
+author:
+  - name: Skylar Walsh
+    url: {}
+date: 2025-01-24
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+# Name: Skylar Walsh
+# Professor: Lingyao Li
+# Course: LIS4273.002
+# Date: 1/24/2025
+
+# The variable assignment2 has a vector with a total of 9 elements
+assignment2 <- c(6, 18, 14, 22, 27, 17, 22, 20, 22)
+
+# Define a function called myMean that will calculate the average
+# of a vector. In the body of the function, we are adding all of
+# the elements from the assignment2 variable and then dividing by how many
+# items are in assignment2
+myMean <- function(assignment2) {return(sum(assignment2)/length(assignment2))}
+
+# Run the function, print the mean result into the console.
+myMean(assignment2)
+```
+
+
+
+
