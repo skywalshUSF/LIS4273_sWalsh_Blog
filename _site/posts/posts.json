@@ -1,22 +1,5 @@
 [
   {
-    "path": "posts/welcome/",
-    "title": "My LIS4273 Blog",
-    "description": "This is for LIS4273 advanced stats.",
-    "author": [
-      {
-        "name": "Skylar Walsh",
-        "url": {}
-      }
-    ],
-    "date": "2025-01-24",
-    "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2025-01-24T14:56:11-05:00",
-    "input_file": {}
-  },
-  {
     "path": "posts/2025-01-24-module-2-assignment/",
     "title": "Module 2 Assignment",
     "description": "The myMean function calculates the mean.",
@@ -31,6 +14,23 @@
     "contents": "\r\n\r\n\r\n# Name: Skylar Walsh\r\n# Professor: Lingyao Li\r\n# Course: LIS4273.002\r\n# Date: 1/24/2025\r\n\r\n# The variable assignment2 has a vector with a total of 9 elements\r\nassignment2 <- c(6, 18, 14, 22, 27, 17, 22, 20, 22)\r\n\r\n# Define a function called myMean that will calculate the average\r\n# of a vector. In the body of the function, we are adding all of\r\n# the elements from the assignment2 variable and then dividing by how many\r\n# items are in assignment2\r\nmyMean <- function(assignment2) {return(sum(assignment2)/length(assignment2))}\r\n\r\n# Run the function, print the mean result into the console.\r\nmyMean(assignment2)\r\n\r\n[1] 18.66667\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
     "last_modified": "2025-01-24T15:36:32-05:00",
-    "input_file": "module-2-assignment.knit.md"
+    "input_file": {}
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "My LIS4273 Blog",
+    "description": "This is for LIS4273 advanced stats.",
+    "author": [
+      {
+        "name": "Skylar Walsh",
+        "url": {}
+      }
+    ],
+    "date": "2025-01-24",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2025-02-01T18:05:03-05:00",
+    "input_file": "welcome.knit.md"
   }
 ]

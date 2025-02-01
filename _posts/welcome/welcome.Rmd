@@ -2,6 +2,7 @@
 title: "My LIS4273 Blog"
 description: |
   This is for LIS4273 advanced stats.
+preview: IMG1.jpg
 author:
   - name: Skylar Walsh
     affiliation: University of South Florida
