@@ -2,7 +2,7 @@
 title: "My LIS4273 Blog"
 description: |
   This is for LIS4273 advanced stats.
-preview: IMG1.jpg
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/IMG1.jpg?raw=true
 author:
   - name: Skylar Walsh
     affiliation: University of South Florida
@@ -12,13 +12,5 @@ output:
     self_contained: false
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
 
-# Learn more about creating blogs with Distill at:
-# https://rstudio.github.io/distill/blog.html
-
-```
-
-
-
+<img src="https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/IMG1.jpg?raw=true">
