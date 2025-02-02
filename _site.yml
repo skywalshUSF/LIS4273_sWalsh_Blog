@@ -6,7 +6,7 @@ output_dir: "_site"
 navbar:
   logo:
     image: horns_up50.png
-    href: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/horns_up.png?raw=true
+    href: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/horns_up50.png?raw=true
   right:
     - text: "Home"
       href: index.html
