@@ -5,8 +5,8 @@ description: |
 output_dir: "_site"
 navbar:
   logo:
-    image: IMG1.jpg
-    href: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/IMG1.jpg?raw=true
+    image: horns_up50.png
+    href: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/horns_up.png?raw=true
   right:
     - text: "Home"
       href: index.html
