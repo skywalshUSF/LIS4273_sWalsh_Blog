@@ -1,0 +1,99 @@
+---
+title: "Module-3-Assignment"
+description: |
+  Descriptive statistics: central tendency & variation.
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/mean-r.png?raw=true
+author:
+  - name: Skylar Walsh
+    url: {}
+date: 2025-02-01
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(DescTools)
+```
+
+```{r}
+# Name: Skylar Walsh
+# Professor: Lingyao Li
+# Course: LIS4273.002
+# Date: 2/1/2025
+
+
+
+# Define two sets of data
+firstSet <- c(10, 2, 3, 2, 4, 2, 5)
+firstSet
+secondSet <- c(20, 12, 13, 12, 14, 12, 15)
+secondSet
+# A1.
+# "Central Tendency"
+# Solve the mean, median, and mode of both data sets
+# First set mean:
+mean(firstSet)
+# First set median:
+median(firstSet)
+# First set mode:
+Mode(firstSet)
+# Second set mean:
+mean(secondSet)
+# Second set median:
+median(secondSet)
+# Second set mode:
+Mode(secondSet)
+# A2.
+# "Variation"
+# Compute the range, interquartile, variance,
+# and standard deviation for both sets.
+# First set min and max:
+firstSetMinMax <- range(firstSet)
+firstSetMinMax
+# First set range:
+firstSetRange <- max(firstSet) - min(firstSet)
+firstSetRange
+# First set quartiles:
+quantile(firstSet)
+# First set interquartile range:
+IQR(firstSet)
+# First set variance:
+var(firstSet)
+# First set standard deviation:
+sd(firstSet)
+# Second set min and max:
+secondSetMinMax <- range(secondSet)
+secondSetMinMax
+# Second set range:
+secondSetRange <- max(secondSet) - min(secondSet)
+secondSetRange
+# Second set quartiles:
+quantile(secondSet)
+# Second set interquartile range:
+IQR(secondSet)
+# Second set variance:
+var(secondSet)
+# Second set standard deviation:
+sd(secondSet)
+# A3.
+# "Comparison"
+# Compare results between the first and second set by
+# discussing the differences between the two sets.
+summary(firstSet)
+summary(secondSet)
+# Although both sets have the same range, standard deviation,
+# variance, and interquartile range, they have a different
+# mean, which will affect the coefficient of variance.
+# Coefficient of variation as percent:
+# First set:
+sd(firstSet)/mean(firstSet)*100
+# Second set:
+sd(secondSet)/mean(secondSet)*100
+# Because the first set has a larger coefficient of variation...
+# the data is spread away from the mean on a larger interval.
+```
+
+

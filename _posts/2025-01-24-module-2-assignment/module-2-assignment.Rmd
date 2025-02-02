@@ -2,7 +2,7 @@
 title: "Module 2 Assignment"
 description: |
   The myMean function calculates the mean.
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/IMG1.jpg?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/mean-r.png?raw=true
 author:
   - name: Skylar Walsh
     url: {}
