@@ -2,7 +2,7 @@
 title: "Module-3-Assignment"
 description: |
   Descriptive statistics: central tendency & variation.
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/mean-r.png?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/Rplot-1.jpeg?raw=true
 author:
   - name: Skylar Walsh
     url: {}
