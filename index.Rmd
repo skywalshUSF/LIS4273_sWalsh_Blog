@@ -3,8 +3,10 @@ title: "My LIS4273 - Advanced Stats Blog"
 site: distill::distill_website
 listing: posts
 ---
-
-```{r, echo=FALSE}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+```{r}
 htmltools::img(src = knitr::image_uri("bull.png"),
                alt = 'logo', 
                style = 'position:absolute; top:50; right:0; padding:10px;height:100px')

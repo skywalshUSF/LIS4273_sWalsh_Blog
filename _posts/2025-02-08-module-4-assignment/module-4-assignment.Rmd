@@ -1,0 +1,87 @@
+---
+title: "Module-4-Assignment"
+description: |
+  Probability: Bayes' Theorem.
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/Rplot-1.jpeg?raw=true
+author:
+  - name: Skylar Walsh
+    url: {}
+date: 2025-02-08
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Name: Skylar Walsh
+# Professor: Lingyao Li
+# Course: LIS4273.002
+# Date: 2/8/2025
+
+# "Question A"
+# Based on Table 1, what is the probability of
+
+# A1. Event A
+A <- 30/90
+A
+
+# A2. Event B
+B <- 30/90
+B
+
+# A3. Event A or B
+AUB <- A + B - (10/90)
+AUB
+
+# A4. P(A or B) = P(A) + P(B)
+AUB == A + B
+
+
+# "Question B"
+# B1. Is this answer True or False.
+print("TRUE")
+
+# Please explain why
+cat("The answer is True because we determined that
+    there is a low initial probability of an event occurring (A1) before
+    the weather man made the report (B). This explains why even a seemingly 
+    accurate prediction can be misleading if the probability of an event 
+    is very low. If it only normally rains 5 out of 365
+    days, there is a historically low probability for rain. Even after
+    learning the new information, it does not significantly
+    change the prior belief enough for it to become very likely.
+    If rain were to occur on more days, then the weather mans
+    prediction would be more likely to happen. Bayes' Theorem
+    still indicates a good chance of not raining.")
+# "Question C"
+# For a disease known to have a postoperative complication frequency of 20%, 
+# a surgeon suggests a new procedure.She/he tests it on 10 patients and found 
+# there are not complications. 
+
+# C1. What is the probability of operating on 10 patients successfully with the
+# traditional method?
+
+# List the required parameters
+numPatients <- 10
+successPer <- 0.8
+numSuccess <- 10
+
+# Solve problem with the dbinom function
+probOfSuccess <- dbinom(numSuccess, size = numPatients, prob = successPer)
+# Print the probability
+probOfSuccess
+
+
+
+
+
+
+```
+
+
+

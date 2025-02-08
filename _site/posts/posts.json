@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2025-02-08-module-4-assignment/",
+    "title": "Module-4-Assignment",
+    "description": "Probability: Bayes' Theorem.",
+    "author": [
+      {
+        "name": "Skylar Walsh",
+        "url": {}
+      }
+    ],
+    "date": "2025-02-08",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n# Name: Skylar Walsh\r\n# Professor: Lingyao Li\r\n# Course: LIS4273.002\r\n# Date: 2/8/2025\r\n\r\n# \"Question A\"\r\n# Based on Table 1, what is the probability of\r\n\r\n# A1. Event A\r\nA <- 30/90\r\nA\r\n\r\n[1] 0.3333333\r\n\r\n# A2. Event B\r\nB <- 30/90\r\nB\r\n\r\n[1] 0.3333333\r\n\r\n# A3. Event A or B\r\nAUB <- A + B - (10/90)\r\nAUB\r\n\r\n[1] 0.5555556\r\n\r\n# A4. P(A or B) = P(A) + P(B)\r\nAUB == A + B\r\n\r\n[1] FALSE\r\n\r\n# \"Question B\"\r\n# B1. Is this answer True or False.\r\nprint(\"TRUE\")\r\n\r\n[1] \"TRUE\"\r\n\r\n# Please explain why\r\ncat(\"The answer is True because we determined that\r\n    there is a low initial probability of an event occurring (A1) before\r\n    the weather man made the report (B). This explains why even a seemingly \r\n    accurate prediction can be misleading if the probability of an event \r\n    is very low. If it only normally rains 5 out of 365\r\n    days, there is a historically low probability for rain. Even after\r\n    learning the new information, it does not significantly\r\n    change the prior belief enough for it to become very likely.\r\n    If rain were to occur on more days, then the weather mans\r\n    prediction would be more likely to happen. Bayes' Theorem\r\n    still indicates a good chance of not raining.\")\r\n\r\nThe answer is True because we determined that\r\n    there is a low initial probability of an event occurring (A1) before\r\n    the weather man made the report (B). This explains why even a seemingly \r\n    accurate prediction can be misleading if the probability of an event \r\n    is very low. If it only normally rains 5 out of 365\r\n    days, there is a historically low probability for rain. Even after\r\n    learning the new information, it does not significantly\r\n    change the prior belief enough for it to become very likely.\r\n    If rain were to occur on more days, then the weather mans\r\n    prediction would be more likely to happen. Bayes' Theorem\r\n    still indicates a good chance of not raining.\r\n\r\n# \"Question C\"\r\n# For a disease known to have a postoperative complication frequency of 20%, \r\n# a surgeon suggests a new procedure.She/he tests it on 10 patients and found \r\n# there are not complications. \r\n\r\n# C1. What is the probability of operating on 10 patients successfully with the\r\n# traditional method?\r\n\r\n# List the required parameters\r\nnumPatients <- 10\r\nsuccessPer <- 0.8\r\nnumSuccess <- 10\r\n\r\n# Solve problem with the dbinom function\r\nprobOfSuccess <- dbinom(numSuccess, size = numPatients, prob = successPer)\r\n# Print the probability\r\nprobOfSuccess\r\n\r\n[1] 0.1073742\r\n\r\n\r\n\r\n\r\n",
+    "preview": "https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/Rplot-1.jpeg?raw=true",
+    "last_modified": "2025-02-08T18:16:42-05:00",
+    "input_file": "module-4-assignment.knit.md"
+  },
+  {
     "path": "posts/2025-02-01-module-3-assignment/",
     "title": "Module-3-Assignment",
     "description": "Descriptive statistics: central tendency & variation.",
@@ -14,7 +31,7 @@
     "contents": "\r\n\r\n\r\n# Name: Skylar Walsh\r\n# Professor: Lingyao Li\r\n# Course: LIS4273.002\r\n# Date: 2/1/2025\r\n\r\n\r\n\r\n# Define two sets of data\r\nfirstSet <- c(10, 2, 3, 2, 4, 2, 5)\r\nfirstSet\r\n\r\n[1] 10  2  3  2  4  2  5\r\n\r\nsecondSet <- c(20, 12, 13, 12, 14, 12, 15)\r\nsecondSet\r\n\r\n[1] 20 12 13 12 14 12 15\r\n\r\n# A1.\r\n# \"Central Tendency\"\r\n# Solve the mean, median, and mode of both data sets\r\n# First set mean:\r\nmean(firstSet)\r\n\r\n[1] 4\r\n\r\n# First set median:\r\nmedian(firstSet)\r\n\r\n[1] 3\r\n\r\n# First set mode:\r\nMode(firstSet)\r\n\r\n[1] 2\r\nattr(,\"freq\")\r\n[1] 3\r\n\r\n# Second set mean:\r\nmean(secondSet)\r\n\r\n[1] 14\r\n\r\n# Second set median:\r\nmedian(secondSet)\r\n\r\n[1] 13\r\n\r\n# Second set mode:\r\nMode(secondSet)\r\n\r\n[1] 12\r\nattr(,\"freq\")\r\n[1] 3\r\n\r\n# A2.\r\n# \"Variation\"\r\n# Compute the range, interquartile, variance,\r\n# and standard deviation for both sets.\r\n# First set min and max:\r\nfirstSetMinMax <- range(firstSet)\r\nfirstSetMinMax\r\n\r\n[1]  2 10\r\n\r\n# First set range:\r\nfirstSetRange <- max(firstSet) - min(firstSet)\r\nfirstSetRange\r\n\r\n[1] 8\r\n\r\n# First set quartiles:\r\nquantile(firstSet)\r\n\r\n  0%  25%  50%  75% 100% \r\n 2.0  2.0  3.0  4.5 10.0 \r\n\r\n# First set interquartile range:\r\nIQR(firstSet)\r\n\r\n[1] 2.5\r\n\r\n# First set variance:\r\nvar(firstSet)\r\n\r\n[1] 8.333333\r\n\r\n# First set standard deviation:\r\nsd(firstSet)\r\n\r\n[1] 2.886751\r\n\r\n# Second set min and max:\r\nsecondSetMinMax <- range(secondSet)\r\nsecondSetMinMax\r\n\r\n[1] 12 20\r\n\r\n# Second set range:\r\nsecondSetRange <- max(secondSet) - min(secondSet)\r\nsecondSetRange\r\n\r\n[1] 8\r\n\r\n# Second set quartiles:\r\nquantile(secondSet)\r\n\r\n  0%  25%  50%  75% 100% \r\n12.0 12.0 13.0 14.5 20.0 \r\n\r\n# Second set interquartile range:\r\nIQR(secondSet)\r\n\r\n[1] 2.5\r\n\r\n# Second set variance:\r\nvar(secondSet)\r\n\r\n[1] 8.333333\r\n\r\n# Second set standard deviation:\r\nsd(secondSet)\r\n\r\n[1] 2.886751\r\n\r\n# A3.\r\n# \"Comparison\"\r\n# Compare results between the first and second set by\r\n# discussing the differences between the two sets.\r\nsummary(firstSet)\r\n\r\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \r\n    2.0     2.0     3.0     4.0     4.5    10.0 \r\n\r\nsummary(secondSet)\r\n\r\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \r\n   12.0    12.0    13.0    14.0    14.5    20.0 \r\n\r\n# Although both sets have the same range, standard deviation,\r\n# variance, and interquartile range, they have a different\r\n# mean, which will affect the coefficient of variance.\r\n# Coefficient of variation as percent:\r\n# First set:\r\nsd(firstSet)/mean(firstSet)*100\r\n\r\n[1] 72.16878\r\n\r\n# Second set:\r\nsd(secondSet)/mean(secondSet)*100\r\n\r\n[1] 20.61965\r\n\r\n# Because the first set has a larger coefficient of variation...\r\n# the data is spread away from the mean on a larger interval.\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/Rplot-1.jpeg?raw=true",
     "last_modified": "2025-02-01T21:57:12-05:00",
-    "input_file": "module-3-assignment.knit.md"
+    "input_file": {}
   },
   {
     "path": "posts/2025-01-24-module-2-assignment/",
@@ -31,7 +48,7 @@
     "contents": "\r\n\r\n\r\n# Name: Skylar Walsh\r\n# Professor: Lingyao Li\r\n# Course: LIS4273.002\r\n# Date: 1/24/2025\r\n\r\n# The variable assignment2 has a vector with a total of 9 elements\r\nassignment2 <- c(6, 18, 14, 22, 27, 17, 22, 20, 22)\r\n\r\n# Define a function called myMean that will calculate the average\r\n# of a vector. In the body of the function, we are adding all of\r\n# the elements from the assignment2 variable and then dividing by how many\r\n# items are in assignment2\r\nmyMean <- function(assignment2) {return(sum(assignment2)/length(assignment2))}\r\n\r\n# Run the function, print the mean result into the console.\r\nmyMean(assignment2)\r\n\r\n[1] 18.66667\r\n\r\n\r\n\r\n\r\n",
     "preview": "https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/mean-r.png?raw=true",
     "last_modified": "2025-02-01T20:56:20-05:00",
-    "input_file": "module-2-assignment.knit.md"
+    "input_file": {}
   },
   {
     "path": "posts/welcome/",
