@@ -2,7 +2,7 @@
 title: "Module-4-Assignment"
 description: |
   Probability: Bayes' Theorem.
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/Rplot-1.jpeg?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/probability.jpg?raw=true
 author:
   - name: Skylar Walsh
     url: {}
