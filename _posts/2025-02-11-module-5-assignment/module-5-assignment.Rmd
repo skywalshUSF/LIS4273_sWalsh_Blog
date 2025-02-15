@@ -2,7 +2,7 @@
 title: "Module-5-Assignment"
 description: |
   Hypothesis testing and correlation analysis
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/probability.jpg?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/hypotest.png?raw=true
 author:
   - name: Skylar Walsh
     url: {}
