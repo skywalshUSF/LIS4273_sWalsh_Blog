@@ -184,24 +184,29 @@ boys_time_spend <- c(15, 19, 22, 23, 25, 29, 30, 40)
 # C1. Calculate the correlation coefficient (Pearson) between time 
 # spent and grade for girls' and boys' data sets, respectively.
 
-corrData <- data.frame("Girls Grades"=girls_grades,
-                       "Girls Time"=girls_time_spend, "Boys Grades"=boys_grades,
-                       "Boys Time"=boys_time_spend)
+# Here is the Pearson correlation for the girls
+x <- (girls_grades)
+y <- (girls_time_spend)
+girlsCorr <- data.frame(x, y)
+cor(girlsCorr, method = "pearson")
 
-# Here is the Pearson correlation
-
-cor(corrData, method = "pearson")
-
-# Here is the Spearman correlation
-
-cor(corrData, method = "spearman")
+# Here is the Pearson correlation for the boys
+x <- (boys_grades)
+y <- (boys_time_spend)
+boysCorr <- data.frame(x, y)
+cor(boysCorr, method = "pearson")
 
 # C2. Use ggpairs to plot the time spent and grade for 
 # girls' and boys' datasets, respectively
 
 # Here is the plot to compare the time spent
-# and grade for both girls and boys data sets
-ggpairs(corrData, upper = list(wrap("cor", size = 5)),
+# and grade for the girls
+ggpairs(girlsCorr, upper = list(wrap("cor", size = 5)),
+diag = list(continuous = "densityDiag"),)
+
+# Here is the plot to compare the time spent
+# and grade for the boys
+ggpairs(boysCorr, upper = list(wrap("cor", size = 5)),
 diag = list(continuous = "densityDiag"),)
 ```
 
