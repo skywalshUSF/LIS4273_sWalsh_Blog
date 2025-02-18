@@ -1,0 +1,137 @@
+---
+title: "Module-6-Assignment"
+description: |
+  Random Variable(s) and Probability Distribution(s)
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/hypotest.png?raw=true
+author:
+  - name: Skylar Walsh
+    url: {}
+date: 2025-02-18
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Name: Skylar Walsh
+# Professor: Lingyao Li
+# Course: LIS4273.002
+# Date: 2/18/2025
+
+# "Question A"
+
+# Consider a population consisting of the following values, 
+# which represents the number of ice cream purchases during 
+# one year for each of the five housemates.8, 14, 16, 10, 11.
+
+# Here are the population values
+popVal <- c(8, 14, 16, 10, 11)
+popVal
+
+# A1. Compute the mean of this population.
+mu <- mean(popVal)
+mu
+
+
+# A2. Select a random sample of size 2 out of the five members.
+sampVal <- sample(popVal, size = 2, replace = TRUE)
+sampVal
+
+# A3. Compute the mean and standard deviation of your sample.
+xBar <- mean(sampVal)
+sampleStdDev <- sd(sampVal)
+xBar
+sampleStdDev
+
+# A4. Compare the Mean and Standard deviation of your sample 
+# to the entire population of this set (8,14, 16, 10, 11).
+
+# Calculate population standard deviation
+popStdDev <- sd(popVal)
+
+# The mean and the standard deviation of the sample are:
+paste("Sample Mean:",xBar, "/ Sample Standard Deviation:",sampleStdDev)
+# The mean and the standard deviation of the population are:
+paste("Population Mean:",mu, "/ Population Standard Deviation:",popStdDev)
+
+# If the sample includes values close to the population mean,
+# the sample mean will be similar to the population mean
+
+# If the sample has outliers, the sample mean might be further
+# from the population mean
+
+# If the standard deviation of the sample is greater than the
+# standard deviation of the population, the data will have a
+# wider spread across the x-axis
+
+
+# "Question B"
+# Suppose that the sample size n = 100 and the population proportion p = 0.95.
+
+
+# B1. Does the sample proportion p have approximately a 
+# normal distribution? Explain.
+
+# The distribution is expected to be normal if both n*p and n*q are greater
+# than or equal to 5 
+
+# Sample size
+n <- 100
+
+# Probability of success
+p <- 0.95
+
+# Probability of failure
+q <- 1 - p
+
+# Apply the rules
+np <- n * p
+nq <- n * q
+np
+nq
+
+# Since p = .95, q = .05. p * n = .95 * 100 = 95 
+# and q * n = .05 * 100 = 5, I can conclude that the sampling proportion p 
+# will have approximately a normal distribution.
+
+
+# B2. What is the smallest value of n for which the sampling 
+# distribution of p is approximately normal?
+
+cat("The smallest value of n for which the sampling distribution is
+approximately normal is 100. Any value for n less than 100
+will make n*q less than 5. In order for the sampling 
+distribution of p to be considered approximately normal,
+both n*p and n*q must be greater than or equal to 5.
+Therefore, n = 100 is the smallest value.")
+
+# "Question C"
+# From our textbook, Chapter 2 Probability Exercises # 2.4. 
+# Simulated coin tossing is probability better done using 
+# function called rbinom than using the function called sample.
+
+# C1. Please explain the reason why rbinom is better than 
+# sample in the coin tossing simulation.
+
+cat("ribnom is better than the function sample for a coin toss
+because rbinom is specifically modeled to generate random
+samples from a binomial distribution, which models the exact
+probability of getting heads or tails in a coin toss experiment.
+Sample requires creating a vector with \"Heads\" or \"Tails\"
+elements and then randomly sampling from that vector. This extra
+step is unnecessary with rbinom because it is programmed to generate
+the binomial experiment outcome based on the binomial distribution.
+rbinom is a good choice for determining the number of successes
+and failures in a fixed number of independent trials.
+Overall, it is the most accurate in terms of events that
+deal with one of two possible outcomes. In this case
+with the coin flip, the two possible outcomes would be
+heads or tails. ")
+
+```
+
