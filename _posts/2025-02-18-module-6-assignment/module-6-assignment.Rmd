@@ -2,7 +2,7 @@
 title: "Module-6-Assignment"
 description: |
   Random Variable(s) and Probability Distribution(s)
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/hypotest.png?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/Random-Variable.jpg?raw=true
 author:
   - name: Skylar Walsh
     url: {}
