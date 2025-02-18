@@ -39,7 +39,7 @@ mu
 
 
 # A2. Select a random sample of size 2 out of the five members.
-sampVal <- sample(popVal, size = 2, replace = TRUE)
+sampVal <- sample(popVal, size = 2, replace = FALSE)
 sampVal
 
 # A3. Compute the mean and standard deviation of your sample.

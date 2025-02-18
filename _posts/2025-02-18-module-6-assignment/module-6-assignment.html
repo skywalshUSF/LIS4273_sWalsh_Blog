@@ -1571,21 +1571,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre><code>[1] 11.8</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># A2. Select a random sample of size 2 out of the five members.</span></span>
-<span><span class='va'>sampVal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>popVal</span>, size <span class='op'>=</span> <span class='fl'>2</span>, replace <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
+<span><span class='va'>sampVal</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>popVal</span>, size <span class='op'>=</span> <span class='fl'>2</span>, replace <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></span>
 <span><span class='va'>sampVal</span></span></code></pre>
 </div>
-<pre><code>[1] 8 8</code></pre>
+<pre><code>[1] 11 14</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># A3. Compute the mean and standard deviation of your sample.</span></span>
 <span><span class='va'>xBar</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>sampVal</span><span class='op'>)</span></span>
 <span><span class='va'>sampleStdDev</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='op'>(</span><span class='va'>sampVal</span><span class='op'>)</span></span>
 <span><span class='va'>xBar</span></span></code></pre>
 </div>
-<pre><code>[1] 8</code></pre>
+<pre><code>[1] 12.5</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>sampleStdDev</span></span></code></pre>
 </div>
-<pre><code>[1] 0</code></pre>
+<pre><code>[1] 2.12132</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># A4. Compare the Mean and Standard deviation of your sample </span></span>
 <span><span class='co'># to the entire population of this set (8,14, 16, 10, 11).</span></span>
@@ -1596,7 +1596,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span><span class='co'># The mean and the standard deviation of the sample are:</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"Sample Mean:"</span>,<span class='va'>xBar</span>, <span class='st'>"/ Sample Standard Deviation:"</span>,<span class='va'>sampleStdDev</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code>[1] &quot;Sample Mean: 8 / Sample Standard Deviation: 0&quot;</code></pre>
+<pre><code>[1] &quot;Sample Mean: 12.5 / Sample Standard Deviation: 2.12132034355964&quot;</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># The mean and the standard deviation of the population are:</span></span>
 <span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='st'>"Population Mean:"</span>,<span class='va'>mu</span>, <span class='st'>"/ Population Standard Deviation:"</span>,<span class='va'>popStdDev</span><span class='op'>)</span></span></code></pre>
