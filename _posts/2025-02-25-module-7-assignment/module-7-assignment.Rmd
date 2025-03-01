@@ -2,11 +2,11 @@
 title: "Module-7-Assignment"
 description: |
   Simple Linear and Multiple Regression Analysis
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/Random-Variable.jpg?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/regression.png?raw=true
 author:
   - name: Skylar Walsh
     url: {}
-date: 2025-02-25
+date: 2025-02-28
 output:
   distill::distill_article:
     self_contained: false
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # Name: Skylar Walsh
 # Professor: Lingyao Li
 # Course: LIS4273.002
-# Date: 2/25/2025
+# Date: 2/28/2025
 
 # 'Question A'
 
@@ -46,30 +46,25 @@ knitr::opts_chunk$set(echo = TRUE)
 x <- c(16, 17, 13, 18, 12, 14, 19, 11, 11, 10)
 y <- c(63, 81, 56, 91, 47, 57, 76, 72, 62, 48)
 
-
 # A1. Define the relationship model between the independent and
 # the dependent variable.
 
 # Define the relationship model by creating a linear model
 relModel <- lm(y ~ x)
-
+relModel
 # Print a summary of the regression model
 summary(relModel)
-
-
-
 # A2. Calculate the coefficients
-coefficients(relModel)
-
-# x represents an independent variable or the predictor
-
-# y represents a dependent variable or the response
-
-# The coefficients calculated from summary(relModel) will display the
+relModelCoeffs <- coefficients(relModel)
+# The coefficients calculated will be displayed as the
 # values of b0 (the y-intercept) and b1 (the slope)
 
-
-
+# b0 represents the intercept or constant and is the first coefficient
+# It represents the y-value when x = 0
+relModelCoeffs[1]
+# b1 represents the slope and is the second, regression coefficient.
+# It represents how much y changes as x changes.
+relModelCoeffs[2]
 # 'Question B'
 
 # The following question is posted by Chi Yau the author of R Tutorial With 
@@ -98,32 +93,34 @@ visit <- data.frame("discharge" = c(3.600, 1.800, 3.333, 2.283, 4.533, 2.883),
 # B1. Define the relationship model between the predictor 
 # and the response variable.
 
+# The response variable y is "discharge" and is predicted by
+# the predictor variable x, which is "waiting"
+
 # Model the relationship between the predictor variable x and 
 # the response variable y
 discharge <- lm(discharge ~ waiting, data=visit)
-
-
+discharge
 # B2. Extract the parameters of the estimated regression equation with 
 # the coefficients function.
 coeff <- coefficients(discharge)
 coeff
-
-
 # B3. Determine the fit of the eruption duration using 
 # the estimated regression equation.
 
 # Here is the value for the waiting time since the last eruption, also
-# known as x (named waiting).
+# known as x (named "waiting").
 waiting <- 80
 
-# Use the estimated regression equation
+# Use the estimated regression equation to fit the discharge duration
 predictedDis <- coeff[1]+coeff[2]*waiting
 predictedDis
-
+# Based on the simple linear regression model, if the waiting time since
+# the last discharge has been 80 minutes, we expect the next discharge
+# To last for 3.87 minutes.
 
 # 'Question C. Multiple Regression'
 
-# We will use a very famous datasets in R called mtcars. This dateset 
+# We will use a very famous dataset in R called mtcars. This dataset 
 # was extracted from the 1974 Motor Trend US magazine, and comprises 
 # fuel consumption and 10 aspects of automobile design and performance 
 # for 32 automobiles (1973--74 models).
@@ -160,7 +157,7 @@ data(mtcars)
 
 # Select the variables that are of importance
 input <- mtcars[,c("mpg", "disp", "hp", "wt")]
-
+print(head(input))
 # Apply the multiple linear regression equation
 multModel <- lm(formula = mpg ~ disp + hp + wt, data = input)
 
