@@ -6,7 +6,7 @@ preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/ANOVA.png?
 author:
   - name: Skylar Walsh
     url: {}
-date: 2025-03-05
+date: 2025-03-06
 output:
   distill::distill_article:
     self_contained: false
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # Name: Skylar Walsh
 # Professor: Lingyao Li
 # Course: LIS4273.002
-# Date: 3/5/2025
+# Date: 3/6/2025
 
 # 'Question A'
 
