@@ -2,7 +2,7 @@
 title: "Module-8-Assignment"
 description: |
   Introduction to ANOVA
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/regression.png?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/ANOVA.png?raw=true
 author:
   - name: Skylar Walsh
     url: {}
@@ -31,12 +31,119 @@ knitr::opts_chunk$set(echo = TRUE)
 # The subjects of the study were instructed to take the drug test during 
 # their next stress episode and to report their stress on a scale of 1 to 10 
 # (10 being the most pain).
-
+```
+<img src="https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/_posts/2025-03-05-module-8-assignment/table1.png?raw=true"/>
+```{r}
 # Report on drug and stress level by using R. Provide a full summary report 
 # on the result of ANOVA testing and what it means.
+# More specifically, report the following: 
+# Df, Sum, Sq Mean, Sq, F value, Pr(>F)
+
+# Create vectors for each group in stress data table
+highStress <- c(10, 9, 8, 9, 10, 8)
+moderateStress <- c(8, 10, 6, 7, 8, 8)
+lowStress <- c(4, 6, 6, 4, 2, 2)
+
+# Combine the data into a single response variable
+stressLevels <- c(highStress, moderateStress, lowStress)
+
+# Create a data frame for the values and stress level factors
+stressData <- data.frame(value = c(stressLevels),
+stressAmounts = factor(rep(c("High", "Moderate", "Low"), each = 6)))
+
+# ANOVA test
+anovaStressResults <- aov(value ~ stressAmounts, data = stressData)
+
+# Create a summary of the results
+summary(anovaStressResults)
+# Full summary report on the result of ANOVA testing:
+
+# Df for stressAmounts is 2. This stands for k - 1, which is the
+# number of samples minus 1, which equals 2.
+# Df for the residuals is 15. This is N - k, where N equals the
+# number of observations and k equals the number of samples.
+# If you add these together, they equal n - 1, total df.
+
+# Sum sq stands for SS(B) + SS(W), where SS(B) = 82.11, which represents
+# the sum of squares for between-treatment variance and 
+# SS(W) = 28.83, which represents the sum of squares for
+# within-treatment variance. Adding SS(B) + SS(W) gives the total variability.
+
+# Mean Sq for stressAmounts is the mean of the sum of squares of the groups 
+# that receive the treatment, which equals 41.06, and mean sq for the residuals
+# is the mean of the sum of squares of the groups without treatment effects,
+# which equals 1.92. Together, they equal the F ratio, MS(B)/MS(W).
+
+# The F value is 21.36. An F value of 1 would indicate no difference between
+# the sample means MS(B) and the sample variations MS(W). This large F value
+# indicates strong evidence that there is a difference between the group means.
+
+# The Pr(>F) value is 4.08e-05 ***, which is a very low p-value, less than
+# 0.05. Therefore, we reject the null hypothesis that there are no differences
+# between the means. In this case, we can conclude that there are significant
+# differences within the group means.
+
+# 'Question B'
+
+# The zelazo data (taken from the textbook's R package called ISwR) are in 
+# the form of a list of vectors, one for each of the four groups.
+
+# B1. Convert the data to a form suitable for the user of lm, and calculate 
+# the relevant test. Consider t-tests comparing selected subgroups or 
+# obtained by combining groups.
+
+# Load the data set
+library(ISwR)
+data("zelazo")
+
+# Convert the data to a form suitable for the user
+zelazoDf <- data.frame(
+zelazoValue = c(zelazo$active, zelazo$passive, zelazo$none, zelazo$ctr.8w),
+zelazoTraining = factor(rep(c("Active", "Passive", "None", "Control"),
+times = c(length(zelazo$active), length(zelazo$passive), length(zelazo$none),
+          length(zelazo$ctr.8w)))))
+
+# Calculate the relevant linear model (lm) test
+linearModel <- lm(zelazoDf$zelazoValue~zelazoDf$zelazoTraining,data=zelazoDf)
+summary(linearModel)
+
+# Consider t-tests comparing selected subgroups:
+
+# t-test for active training versus no training
+activeVersusNone <- t.test(zelazo$active, zelazo$none)
+activeVersusNone
+# The p-value of 0.09442 is greater than 0.05, so there is no significant
+# evidence to reject H0 and there is no difference between the means
+
+
+# t-test for active training versus passive training
+activeVersusPassive <- t.test(zelazo$active, zelazo$passive)
+activeVersusPassive
+# The p-value of 0.2301 is greater than 0.05, so there is no significant
+# evidence to reject H0 and there is no difference between the means
+
+# t-test for active training versus control training
+activeVersusControl <- t.test(zelazo$active, zelazo$control)
+activeVersusControl
+# The p-value 1.238e-05 is less than 0.05, so there is significant evidence
+# to reject H0 and a difference does exist between these two groups
+
+# B2. Consider the ANOVA test (one-way or two-way) for this dataset (zelazo)
+
+# Perform the one-way test for this data set using the oneway.test() function
+oneway.test(zelazoDf$zelazoValue~zelazoDf$zelazoTraining)
+# The oneway.test() function provides information on the F value, the p-value,
+# and the df for both the numerator and the denominator.
+
+# Perform the ANOVA test for this data set using the aov() function
+zelazoAOV <- aov(zelazoDf$zelazoValue~zelazoDf$zelazoTraining, data=zelazoDf)
+summary(zelazoAOV)
+
+# After using the aov() function, I then called the summary() function so that
+# I can print a table to get the variations, zelazo training group values, 
+# and residual values.
 
 
 ```
-<img src="C:/LIS4273_sWalsh_Blog/_posts/2025-03-05-module-8-assignment/table1.png"/>
 
 
