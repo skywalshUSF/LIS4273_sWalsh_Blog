@@ -2,7 +2,7 @@
 title: "Module-9-Assignment"
 description: |
   Introduction to tabular data and contingency tables
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/ANOVA.png?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/tabulardata.png?raw=true
 author:
   - name: Skylar Walsh
     url: {}
