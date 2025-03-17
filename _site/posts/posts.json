@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2025-03-17-module-9-assignment/",
+    "title": "Module-9-Assignment",
+    "description": "Introduction to tabular data and contingency tables",
+    "author": [
+      {
+        "name": "Skylar Walsh",
+        "url": {}
+      }
+    ],
+    "date": "2025-03-17",
+    "categories": [],
+    "contents": "\r\n\r\n\r\n# Name: Skylar Walsh\r\n# Professor: Lingyao Li\r\n# Course: LIS4273.002\r\n# Date: 3/17/2025\r\n\r\n# 'Question A'\r\n\r\n# Your data.frame is listed as below.\r\n\r\n# Create the data frame with country, age, salary, and purchased variables\r\ndf <- data.frame(\r\n  country = c(\"France\", \"Spain\", \"Germany\", \"Spain\", \"Germany\", \"France\", \"Spain\", \"France\", \"Germany\", \"France\"),\r\n  age = c(44, 27, 30, 38, 40, 35, 52, 48, 45, 37),\r\n  salary = c(6000, 5000, 7000, 4000, 8000, 6000, 5000, 7000, 4000, 8000),\r\n  purchased = c(\"No\", \"Yes\", \"No\", \"No\", \"Yes\", \"Yes\", \"No\", \"Yes\", \"No\", \"Yes\")\r\n)\r\n\r\n# A1. Generate a one-way table for \"purchased\"\r\ntableOne <- table(df$purchased)\r\ntableOne\r\n\r\n\r\n No Yes \r\n  5   5 \r\n\r\n# The table() function counts the frequency \"Yes\" and \"No\"\r\n# appear in the \"purchased\" column of the data frame.\r\n\r\n# The results show that five did not purchase, and\r\n# five did purchase.\r\n\r\n# A2. Generate a two-way table for \"country\" and \"purchased.\"\r\ntableTwo <- table(df$country, df$purchased)\r\ntableTwo\r\n\r\n         \r\n          No Yes\r\n  France   1   3\r\n  Germany  2   1\r\n  Spain    2   1\r\n\r\n# This is generating a table that will measure the relationship \r\n# between \"country\" variables and \"purchased\" variables\r\n\r\n# Ex. In \"Germany,\" two said \"No\" to purchasing, while one said \"Yes.\"\r\n\r\n\r\n\r\n# 'Question B'\r\n\r\n# We will analyze a data frame by creating a contingency table based on the\r\n# number of cylinders and number of gears.\r\n\r\n# Generate contingency table also known as rx C table using mtcars dataset. \r\ndata(mtcars)\r\nmtcars_df <- table(mtcars$gear, mtcars$cyl, dnn = c(\"Gears\", \"Cylinders\"))\r\n\r\n# The table counts how many cars in the dataframe have a certain number of\r\n# cylinders and gears.\r\n\r\n\r\n# B1. Add the addmargins() function to report on the sum totals of \r\n# the rows and columns of \"mtcars_df\" table\r\nmtcarsTableMargins <- addmargins(mtcars_df)\r\nmtcarsTableMargins\r\n\r\n     Cylinders\r\nGears  4  6  8 Sum\r\n  3    1  2 12  15\r\n  4    8  4  0  12\r\n  5    2  1  2   5\r\n  Sum 11  7 14  32\r\n\r\n# The addMargins() function adds row and column sums to the table, helping\r\n# me see the total number of counts.\r\n\r\n# What is displayed includes an extra row and column that is labeled \"Sum,\"\r\n# which indicates the total number of values in a particular row or column.\r\n\r\n\r\n# B2. Add prop.table() function, and report on the proportional weight \r\n# of each value in the \"mtcars_df\" table\r\nmtcarsTableProp <- prop.table(mtcars_df)\r\nmtcarsTableProp\r\n\r\n     Cylinders\r\nGears       4       6       8\r\n    3 0.03125 0.06250 0.37500\r\n    4 0.25000 0.12500 0.00000\r\n    5 0.06250 0.03125 0.06250\r\n\r\n# The prop.table() function converts the table into proportions. This helps\r\n# show the percentage of each category that is compared to the total number\r\n# of observations.\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/ANOVA.png?raw=true",
+    "last_modified": "2025-03-17T16:06:54-04:00",
+    "input_file": "module-9-assignment.knit.md"
+  },
+  {
     "path": "posts/2025-03-06-module-8-assignment/",
     "title": "Module-8-Assignment",
     "description": "Introduction to ANOVA",
