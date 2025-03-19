@@ -6,7 +6,7 @@ preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/tabulardat
 author:
   - name: Skylar Walsh
     url: {}
-date: 2025-03-17
+date: 2025-03-19
 output:
   distill::distill_article:
     self_contained: false
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # Name: Skylar Walsh
 # Professor: Lingyao Li
 # Course: LIS4273.002
-# Date: 3/17/2025
+# Date: 3/19/2025
 
 # 'Question A'
 
