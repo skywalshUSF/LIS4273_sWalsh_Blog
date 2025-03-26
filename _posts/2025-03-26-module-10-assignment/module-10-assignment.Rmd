@@ -1,0 +1,162 @@
+---
+title: "Module-10-Assignment"
+description: |
+  Multivariate Regression and Anova
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/tabulardata.png?raw=true
+author:
+  - name: Skylar Walsh
+    url: {}
+date: 2025-03-26
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Name: Skylar Walsh
+# Professor: Lingyao Li
+# Course: LIS4273.002
+# Date: 3/26/2025
+
+# 'Question A'
+
+# Conduct ANOVA (analysis of variance) and Regression coefficients to the 
+# data from data (" cystfibr ") database. You can choose any 
+# variable you like to interpret.
+
+
+# A1. In the report, please state the result of coefficients and significance 
+# to any variables you like both under ANOVA and multivariate analysis. 
+# Please provide a specific interpretation of R results.
+
+library(ISwR)
+data("cystfibr")
+attach(cystfibr)
+
+# Create a linear regression model object
+# pemax is predicted by age, weight, bmp, and fev1 combined
+pemaxModel <- lm(pemax ~ age + weight + bmp + fev1, data = cystfibr)
+summary(pemaxModel)
+
+# The (Intercept), 179.2957, is the predicted value of the response
+# variable "pemax," which is the maximum expiratory pressure when
+# the predictor variables (age, weight, bmp, fev1) are zero.
+
+# The coefficient for the "age" variable is -3.4181, which suggests
+# that for each unit "age" increases, "pemax" decreases by 3.4181 units.
+
+# The coefficient for the "weight" variable is 2.6882, which suggests
+# that for each unit "weight" increases, "pemax" increases by 2.6882 units.
+
+# The coefficient for the "bmp" variable is -2.0657, which suggests
+# that for each unit "bmp" increases, "pemax" decreases by 2.0657 units.
+
+# The coefficient for the "fev1" variable is 1.0882, which suggests
+# that for each unit "fev1" increases, "pemax" increases by 1.0882 units.
+
+# The summary() suggests that "weight," "bmp," and "fev1," are statistically
+# significant because the p value is less than 0.05% alpha
+# A high F-statistic of 7.248 and an extremely small p-value 0.0008891
+# suggest that at least one of the predictor variables has a significant effect
+# on the outcome variable.
+
+# Conduct ANOVA analysis to analyze the results of the regression model
+# with multiple variables to assess whether there are differences in group
+# means and variance that identify significant relationships among variables. 
+anova(lm(pemax ~ age + weight + bmp + fev1, data=cystfibr))
+
+# After conducting the ANOVA analysis, the Analysis of Variance Table suggests:
+
+# for, Null hypothesis Ho: there is no difference between group means
+#      Alt  hypothesis Ha: there is a difference between group means
+
+# The "age" variable has a high F-value of 18.4385 and a small p-value 0.0003538
+# Therefore, we can reject the null hypothesis and conclude that the "age"
+# variable has a statistically significant effect on the response variable
+
+# The "weight" variable has a low F-value of 1.7258 and large p-value 0.2038195
+# Therefore, we would fail to reject the null hypothesis and conclude that the
+# "weight" variable does not have a statistically significant effect on the
+# response variable. This indicates that a model without the "weight" variable
+# would fit as well as the model with the "weight" variable.
+
+# The "bmp" and "fev1" variables are very close to the 0.05% alpha level of
+# significance and their p-values suggest that they may have a statistically
+# significant effect on the response variable. With a p-value of 0.0501483
+# for "bmp" we fail to reject the null and a p-value of 0.0469468 for "fev1"
+# we can reject the null.
+
+
+# 'Question B'
+
+
+# The secher data("secher") are best analyzed after log-transforming 
+# birth weight as well as the abdominal and biparietal diameters. 
+# Fit a prediction weight as well as abdominal and biparietal diameters. 
+# For a prediction equation for birth weight.
+
+# B1. How much is gained by using both diameters in a prediction equation? 
+# The sum of the two regression coefficients is almost identical and equal to 3.
+
+# Load the data set
+data("secher")
+attach(secher)
+
+# Model with only abdominal diameter
+model_ad <- lm(log(bwt) ~ I(log(ad)), data=secher)
+summary(model_ad)
+# Model with only biparietal diameter
+model_bpd <- lm(log(bwt) ~ I(log(bpd)), data=secher)
+summary(model_bpd)
+# Combine both models
+model_combined <- lm(log(bwt) ~ I(log(ad)) + I(log(bpd)), data=secher)
+summary(model_combined)
+
+# Using both abdominal and biparietal diameters in the prediction equation 
+# increases the accuracy compared to using either diameter alone. 
+# The r-squared value increases as more variables are added. The sum of 
+# the regression coefficients being approximately 3 indicates that a 1% 
+# increase in both diameters is associated with a 3% increase in birth weight.
+
+# B2. Can this be given a nice interpretation to our analysis? 
+# Please provide step by step on your analysis and code you use 
+# to find out the result. 
+
+# R Squared is the coefficient of determination that ranges from 0-1
+# and determines the proportion of the variation in the dependent variable 
+# that is explained by the independent variables in the regression model.
+r_squared_combined <- summary(model_combined)$r.squared
+r_squared_ad <- summary(model_ad)$r.squared
+r_squared_bpd <- summary(model_bpd)$r.squared
+
+# Increasing R squared means that the model will explain a greater percentage 
+# of the variability in the dependent variable. Higher R Squared values 
+# indicate a better fit of the model to the data.
+
+# When comparing the R Squared difference between the 'ad' only model
+# and the 'ad' and 'bpd' combined model:
+adDiff<-r_squared_combined - r_squared_ad
+cat("There is a",adDiff,"increase in r squared
+From",r_squared_ad,"to",r_squared_combined)
+
+# When comparing the R Squared difference between the 'bpd' only model
+# and the 'ad' and 'bpd' combined model:
+bpdDiff<-r_squared_combined - r_squared_bpd
+cat("There is a",bpdDiff,"increase in r squared
+From",r_squared_bpd,"to",r_squared_combined)
+# Both cases indicate a higher R Squared value from the combined model.
+
+# B3. Just an additional question (This will not be graded). 
+# When should we consider "log-transforming" a dataset? 
+# This is a very common practice in data science. 
+
+cat("We should consider 'log-transforming' a dataset when our data is skewed,
+has multiplicative relationships that are modeled with linear regression,
+and where the variance of the data is not constant in the range of values.")
+```
+
