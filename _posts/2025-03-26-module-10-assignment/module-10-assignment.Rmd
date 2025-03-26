@@ -2,7 +2,7 @@
 title: "Module-10-Assignment"
 description: |
   Multivariate Regression and Anova
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/tabulardata.png?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/multivariate.png?raw=true
 author:
   - name: Skylar Walsh
     url: {}
