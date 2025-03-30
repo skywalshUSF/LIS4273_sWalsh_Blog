@@ -2,7 +2,7 @@
 title: "Module-11-Assignment"
 description: |
   Logistic Regression
-preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/multivariate.png?raw=true
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/logReg.png?raw=true
 author:
   - name: Skylar Walsh
     url: {}

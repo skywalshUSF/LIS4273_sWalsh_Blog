@@ -114,7 +114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Module-11-Assignment"]},{"type":"character","attributes":{},"value":["Logistic Regression"]},{"type":"character","attributes":{},"value":["https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/multivariate.png?raw=true"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Skylar Walsh"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2025-03-30"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Module-11-Assignment"]},{"type":"character","attributes":{},"value":["Logistic Regression"]},{"type":"character","attributes":{},"value":["https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/logReg.png?raw=true"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Skylar Walsh"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2025-03-30"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2329,18 +2329,18 @@ lm(formula = z ~ a * b)
 
 Residuals:
       1       2       3       4       5       6       7       8 
- 0.5748 -0.5748  1.1115 -1.1115 -2.1016  2.1016  1.0060 -1.0060 
+-0.3403  0.3403  1.9785 -1.9785 -0.3274  0.3274 -1.2630  1.2630 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)
-(Intercept)  -1.1899     1.3224  -0.900    0.419
-a2            0.5004     1.8701   0.268    0.802
-b2            0.7899     1.8701   0.422    0.694
-a2:b2        -0.3032     2.6447  -0.115    0.914
+(Intercept)   0.5491     1.1971   0.459    0.670
+a2           -0.9790     1.6930  -0.578    0.594
+b2            0.1389     1.6930   0.082    0.939
+a2:b2         0.4027     2.3943   0.168    0.875
 
-Residual standard error: 1.87 on 4 degrees of freedom
-Multiple R-squared:  0.07315,   Adjusted R-squared:  -0.622 
-F-statistic: 0.1052 on 3 and 4 DF,  p-value: 0.9527</code></pre>
+Residual standard error: 1.693 on 4 degrees of freedom
+Multiple R-squared:  0.1172,    Adjusted R-squared:  -0.5449 
+F-statistic: 0.177 on 3 and 4 DF,  p-value: 0.9068</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Call the interaction term (z ~ a:b) model matrix </span></span>
 <span><span class='va'>interactionTermModel</span></span></code></pre>
@@ -2374,27 +2374,25 @@ lm(formula = z ~ a:b)
 
 Residuals:
       1       2       3       4       5       6       7       8 
- 0.5748 -0.5748  1.1115 -1.1115 -2.1016  2.1016  1.0060 -1.0060 
+-0.3403  0.3403  1.9785 -1.9785 -0.3274  0.3274 -1.2630  1.2630 
 
 Coefficients: (1 not defined because of singularities)
             Estimate Std. Error t value Pr(&gt;|t|)
-(Intercept)  -0.2028     1.3224  -0.153    0.886
-a1:b1        -0.9871     1.8701  -0.528    0.626
-a2:b1        -0.4867     1.8701  -0.260    0.808
-a1:b2        -0.1972     1.8701  -0.105    0.921
+(Intercept)   0.1117     1.1971   0.093    0.930
+a1:b1         0.4374     1.6930   0.258    0.809
+a2:b1        -0.5416     1.6930  -0.320    0.765
+a1:b2         0.5762     1.6930   0.340    0.751
 a2:b2             NA         NA      NA       NA
 
-Residual standard error: 1.87 on 4 degrees of freedom
-Multiple R-squared:  0.07315,   Adjusted R-squared:  -0.622 
-F-statistic: 0.1052 on 3 and 4 DF,  p-value: 0.9527</code></pre>
+Residual standard error: 1.693 on 4 degrees of freedom
+Multiple R-squared:  0.1172,    Adjusted R-squared:  -0.5449 
+F-statistic: 0.177 on 3 and 4 DF,  p-value: 0.9068</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Both models have the same Multiple R-squared:  0.2457</span></span>
 <span><span class='co'># The interaction term only model has a singularity</span></span>
 <span><span class='co'># The coefficient shows NA for a2:b2</span></span></code></pre>
 </div>
 </div>
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
