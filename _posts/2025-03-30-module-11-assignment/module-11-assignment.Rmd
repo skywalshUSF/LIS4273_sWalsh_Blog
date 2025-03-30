@@ -1,0 +1,119 @@
+---
+title: "Module-11-Assignment"
+description: |
+  Logistic Regression
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/multivariate.png?raw=true
+author:
+  - name: Skylar Walsh
+    url: {}
+date: 2025-03-30
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Name: Skylar Walsh
+# Professor: Lingyao Li
+# Course: LIS4273.002
+# Date: 3/30/2025
+
+# 'Question A'
+
+# Set up an additive model for the ashina data, as part of ISwR package
+
+library(ISwR)
+data("ashina")
+attach(ashina)
+
+# This data contain additive effects on subjects, period and treatment.
+
+ashina$subject <- factor(1:16)
+attach(ashina)
+act <- data.frame(vas=vas.active, subject, treat=1, period=grp)
+plac <- data.frame(vas=vas.plac, subject, treat=0, period=grp)
+
+# Combine data frames for treatment groups using rbind()
+ashinaModel <- rbind(act,plac)
+
+# Model the outcome "vas" predicted by "treat" and "period"
+additiveModel <- glm(vas ~ treat+period, data = ashinaModel)
+summary(additiveModel)
+
+# The t-value for the "period" predictor variable is 1.800 with a p-value
+# of 0.0822, which means that "period" does not significantly affect "vas".
+
+# The t-value for the "treat" predictor variable is -2.560 with a p-value
+# of 0.0159, which means that "treat" does significantly affect "vas".
+
+# Compare the results with those obtained from t tests.
+
+# Conduct t tests to determine if "period" group 1 and group 2 affect "vas".
+t1 <- t.test(vas~period, data = ashinaModel)
+t1
+# With a t value of -1.8995 and a p-value of 0.0672, the t test results confirm
+# what the model suggested, that "period" does not have a statistically
+# significant effect on "vas".
+
+# Conduct t tests to determine if "treat" active and placebo affect "vas".
+t2 <- t.test(vas~treat, data = ashinaModel)
+t2
+# With a t value of 2.4699 and a p-value of 0.02099, the t test results confirm
+# what the model suggested, that "treat" does have a statistically
+# significant effect on "vas".
+
+# 'Question B'
+
+# Consider the following
+a <- gl(2, 2, 8) # Creates factor with 2 levels, each repeated 2 times, length 8
+b <- gl(2, 4, 8) # Creates factor with 2 levels, each repeated 4 times, length 8
+x <- 1:8
+y <- c(1:4, 8:5)
+z <- rnorm (8)
+
+# Instruction: The rnorm() is a built-in R function that generates a vector of 
+# normally distributed random numbers. The rnorm() method takes a sample size 
+# as input and generates that many random numbers. 
+# We are looking for two models: (1) model.matrix (z ~ a:b); (2) lm (z ~ a:b).
+
+# B1. Your assignment is to generate the model matrices for the following models:
+
+# z ~ a*b  Model with interaction (a*b),
+interactionModel <- model.matrix(~a*b)
+# Fit model matrix to linear model
+lm.interactionModel <- lm(z ~ a*b)
+# z ~ a:b  Model with only interaction term (a:b)).
+interactionTermModel <- model.matrix(~a:b)
+# Fit model matrix to linear model
+lm.interactionTermModel <- lm(z ~ a:b)
+
+# B2. Please also discuss the implications of using these two models; 
+# please be reminded about the model fits and notice which models 
+# contain singularities.
+
+# Call the interaction (z ~ a*b) model matrix 
+interactionModel
+# This is a design matrix that demonstrates the effect of a and b and a:b on z
+
+# Call the linear model
+summary(lm.interactionModel)
+
+# Call the interaction term (z ~ a:b) model matrix 
+interactionTermModel
+# This is a design matrix that demonstrates the effect of a:b on z
+
+# Call the linear model
+summary(lm.interactionTermModel)
+
+# Both models have the same Multiple R-squared:  0.2457
+# The interaction term only model has a singularity
+# The coefficient shows NA for a2:b2
+
+```
+
+
+
