@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2025-03-30"/>
-  <meta property="article:created" itemprop="dateCreated" content="2025-03-30"/>
+  <meta property="article:published" itemprop="datePublished" content="2025-04-04"/>
+  <meta property="article:created" itemprop="dateCreated" content="2025-04-04"/>
   <meta name="article:author" content="Skylar Walsh"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -113,7 +113,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Module-11-Assignment"]},{"type":"character","attributes":{},"value":["Logistic Regression\n"]},{"type":"character","attributes":{},"value":["https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/logReg.png?raw=true"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Skylar Walsh"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2025-03-30"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Module-11-Assignment"]},{"type":"character","attributes":{},"value":["Logistic Regression\n"]},{"type":"character","attributes":{},"value":["https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/logReg.png?raw=true"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Skylar Walsh"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2025-04-04"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1521,7 +1521,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Module-11-Assignment","description":"Logistic Regression","authors":[{"author":"Skylar Walsh","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-03-30T00:00:00.000-04:00","citationText":"Walsh, 2025"}
+{"title":"Module-11-Assignment","description":"Logistic Regression","authors":[{"author":"Skylar Walsh","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2025-04-04T00:00:00.000-04:00","citationText":"Walsh, 2025"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1541,7 +1541,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-byline">
   Skylar Walsh true 
   
-<br/>2025-03-30
+<br/>2025-04-04
 </div>
 
 <div class="d-article">
@@ -1550,7 +1550,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Name: Skylar Walsh</span></span>
 <span><span class='co'># Professor: Lingyao Li</span></span>
 <span><span class='co'># Course: LIS4273.002</span></span>
-<span><span class='co'># Date: 3/30/2025</span></span>
+<span><span class='co'># Date: 4/04/2025</span></span>
 <span></span>
 <span><span class='co'># 'Question A'</span></span>
 <span></span>
@@ -1702,19 +1702,21 @@ Call:
 lm(formula = z ~ a * b)
 
 Residuals:
-      1       2       3       4       5       6       7       8 
--0.3403  0.3403  1.9785 -1.9785 -0.3274  0.3274 -1.2630  1.2630 
+       1        2        3        4        5        6        7 
+ 0.54087 -0.54087  0.85561 -0.85561 -0.01773  0.01773 -0.38172 
+       8 
+ 0.38172 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)
-(Intercept)   0.5491     1.1971   0.459    0.670
-a2           -0.9790     1.6930  -0.578    0.594
-b2            0.1389     1.6930   0.082    0.939
-a2:b2         0.4027     2.3943   0.168    0.875
+(Intercept)  -0.2227     0.5410  -0.412    0.702
+a2            0.8126     0.7651   1.062    0.348
+b2            0.3749     0.7651   0.490    0.650
+a2:b2        -1.6504     1.0820  -1.525    0.202
 
-Residual standard error: 1.693 on 4 degrees of freedom
-Multiple R-squared:  0.1172,    Adjusted R-squared:  -0.5449 
-F-statistic: 0.177 on 3 and 4 DF,  p-value: 0.9068</code></pre>
+Residual standard error: 0.7651 on 4 degrees of freedom
+Multiple R-squared:  0.4302,    Adjusted R-squared:  0.00288 
+F-statistic: 1.007 on 3 and 4 DF,  p-value: 0.4766</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Call the interaction term (z ~ a:b) model matrix </span></span>
 <span><span class='va'>interactionTermModel</span></span></code></pre>
@@ -1747,20 +1749,22 @@ Call:
 lm(formula = z ~ a:b)
 
 Residuals:
-      1       2       3       4       5       6       7       8 
--0.3403  0.3403  1.9785 -1.9785 -0.3274  0.3274 -1.2630  1.2630 
+       1        2        3        4        5        6        7 
+ 0.54087 -0.54087  0.85561 -0.85561 -0.01773  0.01773 -0.38172 
+       8 
+ 0.38172 
 
 Coefficients: (1 not defined because of singularities)
             Estimate Std. Error t value Pr(&gt;|t|)
-(Intercept)   0.1117     1.1971   0.093    0.930
-a1:b1         0.4374     1.6930   0.258    0.809
-a2:b1        -0.5416     1.6930  -0.320    0.765
-a1:b2         0.5762     1.6930   0.340    0.751
+(Intercept)  -0.6855     0.5410  -1.267    0.274
+a1:b1         0.4629     0.7651   0.605    0.578
+a2:b1         1.2755     0.7651   1.667    0.171
+a1:b2         0.8378     0.7651   1.095    0.335
 a2:b2             NA         NA      NA       NA
 
-Residual standard error: 1.693 on 4 degrees of freedom
-Multiple R-squared:  0.1172,    Adjusted R-squared:  -0.5449 
-F-statistic: 0.177 on 3 and 4 DF,  p-value: 0.9068</code></pre>
+Residual standard error: 0.7651 on 4 degrees of freedom
+Multiple R-squared:  0.4302,    Adjusted R-squared:  0.00288 
+F-statistic: 1.007 on 3 and 4 DF,  p-value: 0.4766</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Both models have the same Multiple R-squared:  0.2457</span></span>
 <span><span class='co'># The interaction term only model has a singularity</span></span>

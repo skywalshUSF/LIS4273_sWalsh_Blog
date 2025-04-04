@@ -6,7 +6,7 @@ preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/logReg.png
 author:
   - name: Skylar Walsh
     url: {}
-date: 2025-03-30
+date: 2025-04-04
 output:
   distill::distill_article:
     self_contained: false
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # Name: Skylar Walsh
 # Professor: Lingyao Li
 # Course: LIS4273.002
-# Date: 3/30/2025
+# Date: 4/04/2025
 
 # 'Question A'
 
