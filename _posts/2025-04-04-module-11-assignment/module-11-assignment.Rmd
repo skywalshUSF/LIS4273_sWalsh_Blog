@@ -83,11 +83,11 @@ z <- rnorm (8)
 # B1. Your assignment is to generate the model matrices for the following models:
 
 # z ~ a*b  Model with interaction (a*b),
-interactionModel <- model.matrix(~a*b)
+interactionModel <- model.matrix(z ~ a*b)
 # Fit model matrix to linear model
 lm.interactionModel <- lm(z ~ a*b)
 # z ~ a:b  Model with only interaction term (a:b)).
-interactionTermModel <- model.matrix(~a:b)
+interactionTermModel <- model.matrix(z ~ a:b)
 # Fit model matrix to linear model
 lm.interactionTermModel <- lm(z ~ a:b)
 
