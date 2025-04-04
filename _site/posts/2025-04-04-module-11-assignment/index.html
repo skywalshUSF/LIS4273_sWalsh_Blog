@@ -2329,20 +2329,22 @@ lm(formula = z ~ a * b)
 
 Residuals:
        1        2        3        4        5        6        7 
- 0.54087 -0.54087  0.85561 -0.85561 -0.01773  0.01773 -0.38172 
+-0.05551  0.05551  0.43900 -0.43900 -0.27300  0.27300  0.29679 
        8 
- 0.38172 
+-0.29679 
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)
-(Intercept)  -0.2227     0.5410  -0.412    0.702
-a2            0.8126     0.7651   1.062    0.348
-b2            0.3749     0.7651   0.490    0.650
-a2:b2        -1.6504     1.0820  -1.525    0.202
+            Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept)   0.7819     0.2993   2.612   0.0593 .
+a2           -0.3781     0.4233  -0.893   0.4223  
+b2           -1.0294     0.4233  -2.432   0.0719 .
+a2:b2        -0.6321     0.5987  -1.056   0.3506  
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Residual standard error: 0.7651 on 4 degrees of freedom
-Multiple R-squared:  0.4302,    Adjusted R-squared:  0.00288 
-F-statistic: 1.007 on 3 and 4 DF,  p-value: 0.4766</code></pre>
+Residual standard error: 0.4233 on 4 degrees of freedom
+Multiple R-squared:  0.8697,    Adjusted R-squared:  0.7719 
+F-statistic: 8.898 on 3 and 4 DF,  p-value: 0.03043</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Call the interaction term (z ~ a:b) model matrix </span></span>
 <span><span class='va'>interactionTermModel</span></span></code></pre>
@@ -2376,21 +2378,23 @@ lm(formula = z ~ a:b)
 
 Residuals:
        1        2        3        4        5        6        7 
- 0.54087 -0.54087  0.85561 -0.85561 -0.01773  0.01773 -0.38172 
+-0.05551  0.05551  0.43900 -0.43900 -0.27300  0.27300  0.29679 
        8 
- 0.38172 
+-0.29679 
 
 Coefficients: (1 not defined because of singularities)
-            Estimate Std. Error t value Pr(&gt;|t|)
-(Intercept)  -0.6855     0.5410  -1.267    0.274
-a1:b1         0.4629     0.7651   0.605    0.578
-a2:b1         1.2755     0.7651   1.667    0.171
-a1:b2         0.8378     0.7651   1.095    0.335
-a2:b2             NA         NA      NA       NA
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)  -1.2576     0.2993  -4.201  0.01368 * 
+a1:b1         2.0395     0.4233   4.818  0.00854 **
+a2:b1         1.6615     0.4233   3.925  0.01718 * 
+a1:b2         1.0102     0.4233   2.386  0.07547 . 
+a2:b2             NA         NA      NA       NA   
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
-Residual standard error: 0.7651 on 4 degrees of freedom
-Multiple R-squared:  0.4302,    Adjusted R-squared:  0.00288 
-F-statistic: 1.007 on 3 and 4 DF,  p-value: 0.4766</code></pre>
+Residual standard error: 0.4233 on 4 degrees of freedom
+Multiple R-squared:  0.8697,    Adjusted R-squared:  0.7719 
+F-statistic: 8.898 on 3 and 4 DF,  p-value: 0.03043</code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># Both models have the same Multiple R-squared:  0.2457</span></span>
 <span><span class='co'># The interaction term only model has a singularity</span></span>
