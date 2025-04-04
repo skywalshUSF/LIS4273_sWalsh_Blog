@@ -109,7 +109,7 @@ interactionTermModel
 # Call the linear model
 summary(lm.interactionTermModel)
 
-# Both models have the same Multiple R-squared:  0.2457
+# Both models have the same Multiple R-squared value
 # The interaction term only model has a singularity
 # The coefficient shows NA for a2:b2
 
