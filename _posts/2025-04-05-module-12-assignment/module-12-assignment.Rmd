@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE)
 # 'Question A'
 # The table below represents charges for a student credit card. 
 ```
-<img src="charges.png" alt="Data Table" width="301" height="402">
+<img src="https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/_posts/2025-03-05-module-8-assignment/table1.png?raw=true"/>
 ```{r warning=FALSE,message=FALSE}
 # A1. Construct a time series plot using R.
 
