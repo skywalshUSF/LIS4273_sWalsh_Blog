@@ -32,7 +32,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # their next stress episode and to report their stress on a scale of 1 to 10 
 # (10 being the most pain).
 ```
-<img src="https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/_posts/2025-03-05-module-8-assignment/table1.png?raw=true"/>
+<img src="https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/_posts/2025-03-06-module-8-assignment/table1.png?raw=true"/>
 ```{r}
 # Report on drug and stress level by using R. Provide a full summary report 
 # on the result of ANOVA testing and what it means.

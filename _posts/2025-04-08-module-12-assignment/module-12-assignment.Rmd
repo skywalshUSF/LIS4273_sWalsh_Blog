@@ -1,0 +1,90 @@
+---
+title: "Module-12-Assignment"
+description: |
+  Time Series Regression
+preview: https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/timeseries.jpg?raw=true
+author:
+  - name: Skylar Walsh
+    url: {}
+date: 2025-04-08
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+# Name: Skylar Walsh
+# Professor: Lingyao Li
+# Course: LIS4273.002
+# Date: 4/08/2025
+
+# 'Question A'
+# The table below represents charges for a student credit card. 
+```
+<img src="https://github.com/skywalshUSF/LIS4273_sWalsh_Blog/blob/main/charges.png?raw=true" alt="data table" width="400" height="500">
+```{r warning=FALSE,message=FALSE}
+# A1. Construct a time series plot using R.
+
+# Create the data for the charges for a student credit card.
+chargeMonths <- c("Jan","Feb","March","Apr","May","Jun","Jul","Aug","Sep","Oct",
+                  "Nov","Dec")
+year2012charges <- c(31.9,27,31.3,31,39.4,40.7,42.3,49.5,45,50,50.9,58.5)
+
+year2013charges <- c(39.4,36.2,40.5,44.6,46.8,44.7,52.2,54,48.8,55.8,58.7,63.4)
+
+# Combine the year data
+charges <- c(year2012charges, year2013charges)
+
+# Create a time series object for the data
+timeSeriesData <- ts(charges, start = c(2012, 1), frequency = 12)
+timeSeriesData
+
+# Begin the time series plot to show a time series regression
+plot.ts(timeSeriesData)
+
+
+# A2. Employ the Exponential Smoothing Model as outlined in Avril Voghlan's 
+# notes and report the statistical  outcome.
+
+# Apply exponential smoothing using the HoltWinters() function and print the
+# required smoothing parameters
+holtWintersModel <- HoltWinters(timeSeriesData)
+holtWintersModel
+
+# Plot the fitted model in addition to Exponential Smoothing
+plot(holtWintersModel, main = "Holt-Winters Exponential Smoothing Model")
+
+# Print a summary of the HoltWinters model
+summary(holtWintersModel)
+
+
+# A3. Provide a discussion on the time series and Exponential Smoothing Model 
+# result you led to.
+
+# Load the "forecast" library
+library(forecast)
+
+# Forecast the next 12 months
+forecastHoltWinters <- forecast(holtWintersModel, h = 12)
+forecastHoltWinters
+
+# Plot the 12 month forecast
+plot(forecastHoltWinters)
+
+# Here is the discussion:
+
+# The time series plot shows a steady increase in student credit card changes
+# over almost a three year period. Using the Holt-Winters exponential smoothing
+# model, the trend and seasonal components are accurately presented. The model
+# fits the data well, as seen in the plot, and the forecast suggests that a
+# continued upward trend in charges over the next twelve months will occur.
+# This is indicating constant growth that does not change, possibly due to 
+# the increased student expenses and even more lengthy economic trends.
+
+
+```
+
